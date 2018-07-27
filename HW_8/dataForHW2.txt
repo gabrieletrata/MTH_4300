@@ -1,0 +1,10 @@
+This is a textual file that contains the data for the second homework. 
+The program you write should ignore this entire text and read only the integers. 
+
+
+The first integer in the text is 25. This number represents the length of the sequence of integers. The program should ignore this text as well. Only when integers occur, the program should read them. For example, -7 (negative seven) is an integer and the program pays attention to this number. In fact, according to the formulation of the problem, this number negative seven is the first term of the sequence. The sequence will have twenty five terms in total. 
+
+The next few terms are 
+   8 9 17 27 -17 -28 35 74 23
+-32 49 53 92 91 -37 -73 -71 -7 9
+11 23 45 23 45

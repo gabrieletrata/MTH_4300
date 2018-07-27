@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{letterpaper, margin=1in}
+\usepackage{setspace}
+%\doublespacing
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\usepackage{amsmath,amssymb,amsthm, mathtools, enumitem}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{url}
+\doublespacing
+
+% Solarized colour scheme for listings
+\definecolor{solarized@base03}{HTML}{002B36}
+\definecolor{solarized@base02}{HTML}{073642}
+\definecolor{solarized@base01}{HTML}{586e75}
+\definecolor{solarized@base00}{HTML}{657b83}
+\definecolor{solarized@base0}{HTML}{839496}
+\definecolor{solarized@base1}{HTML}{93a1a1}
+\definecolor{solarized@base2}{HTML}{EEE8D5}
+\definecolor{solarized@base3}{HTML}{FDF6E3}
+\definecolor{solarized@yellow}{HTML}{B58900}
+\definecolor{solarized@orange}{HTML}{CB4B16}
+\definecolor{solarized@red}{HTML}{DC322F}
+\definecolor{solarized@magenta}{HTML}{D33682}
+\definecolor{solarized@violet}{HTML}{6C71C4}
+\definecolor{solarized@blue}{HTML}{268BD2}
+\definecolor{solarized@cyan}{HTML}{2AA198}
+\definecolor{solarized@green}{HTML}{859900}
+
+% Define C++ syntax highlighting colour scheme
+\lstset{language=C++,
+	basicstyle=\footnotesize\ttfamily,
+	numbers=left,
+	numberstyle=\footnotesize,
+	tabsize=2,
+	breaklines=true,
+	escapeinside={@}{@},
+	numberstyle=\tiny\color{solarized@base01},
+	keywordstyle=\color{solarized@green},
+	stringstyle=\color{solarized@cyan}\ttfamily,
+	identifierstyle=\color{solarized@blue},
+	commentstyle=\color{solarized@base01},
+	emphstyle=\color{solarized@red},
+	frame=single,
+	rulecolor=\color{solarized@base2},
+	rulesepcolor=\color{solarized@base2},
+	showstringspaces=false
+}
+
+\begin{document}
+	\raggedright{Gabriel Etrata} \hfill \raggedleft{Last Modified on \today\ at \currenttime}\\
+	\raggedright{\textbf{MTH 4300 SMWA}, Spring 2018}\\%class
+	\raggedright{Professor Ivan Matic, Baruch College}\\
+	\textit{Homework 6} \\%topic
+	\hrulefill\\
+	\setlength\parindent{24pt} 
+
+\textbf{Problem 2}: What is the output of \texttt{move\_assignment.cpp}? Provide a detailed explanation for your answer. \\
+The main function calls heavyPrinting() which creates two MyClass objects, and outputs:\\
+11\\
+heavyPrinting() then assigns object2 to object1, calling the copy operator and outputs:\\
+4\\
+heavyPrinting() then creates another MyClass objects and outputs:\\
+1\\
+heavyPrinting() then creates assigns myFunction() to object3 and outputs:\\
+1\\
+myFunction() creates a Myclass object called temp, calling the copyFrom constructor and outputs:\\
+4\\
+The destructor gets called and outputs:\\
+6\\
+The copyFrom operator gets called and outputs:\\
+5\\
+The destructor gets called and outputs:\\
+6\\
+heavyPrinting() outputs:\\
+7\\
+The destructor gets called 3 times (3 destructed objects) and outputs:\\
+666\\
+Final output: 1141146567666
+
+
+	
+
+\end{document}

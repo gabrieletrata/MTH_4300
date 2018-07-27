@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{letterpaper, margin=1in}
+\usepackage{setspace}
+%\doublespacing
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\usepackage{amsmath,amssymb,amsthm, mathtools, enumitem}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{url}
+\doublespacing
+
+% Solarized colour scheme for listings
+\definecolor{solarized@base03}{HTML}{002B36}
+\definecolor{solarized@base02}{HTML}{073642}
+\definecolor{solarized@base01}{HTML}{586e75}
+\definecolor{solarized@base00}{HTML}{657b83}
+\definecolor{solarized@base0}{HTML}{839496}
+\definecolor{solarized@base1}{HTML}{93a1a1}
+\definecolor{solarized@base2}{HTML}{EEE8D5}
+\definecolor{solarized@base3}{HTML}{FDF6E3}
+\definecolor{solarized@yellow}{HTML}{B58900}
+\definecolor{solarized@orange}{HTML}{CB4B16}
+\definecolor{solarized@red}{HTML}{DC322F}
+\definecolor{solarized@magenta}{HTML}{D33682}
+\definecolor{solarized@violet}{HTML}{6C71C4}
+\definecolor{solarized@blue}{HTML}{268BD2}
+\definecolor{solarized@cyan}{HTML}{2AA198}
+\definecolor{solarized@green}{HTML}{859900}
+
+% Define C++ syntax highlighting colour scheme
+\lstset{language=C++,
+	basicstyle=\footnotesize\ttfamily,
+	numbers=left,
+	numberstyle=\footnotesize,
+	tabsize=2,
+	breaklines=true,
+	escapeinside={@}{@},
+	numberstyle=\tiny\color{solarized@base01},
+	keywordstyle=\color{solarized@green},
+	stringstyle=\color{solarized@cyan}\ttfamily,
+	identifierstyle=\color{solarized@blue},
+	commentstyle=\color{solarized@base01},
+	emphstyle=\color{solarized@red},
+	frame=single,
+	rulecolor=\color{solarized@base2},
+	rulesepcolor=\color{solarized@base2},
+	showstringspaces=false
+}
+
+\begin{document}
+	\raggedright{Gabriel Etrata} \hfill \raggedleft{Last Modified on \today\ at \currenttime}\\
+	\raggedright{\textbf{MTH 4300 SMWA}, Spring 2018}\\%class
+	\raggedright{Professor Ivan Matic, Baruch College}\\
+	\textit{Homework 1} \\%topic
+	\hrulefill\\
+	\setlength\parindent{24pt} 
+
+\textbf{Problem 1}: Search internet to find useful information and introductory articles about terminal commands \texttt{cp}, \texttt{mv}, \texttt{rm}, and \texttt{rmdir}.
+ \begin{enumerate} [label=(\alph*)]
+ 	\item List 3 webpages from the internet that you found to provide the best information.
+ 	\url{http://mally.stanford.edu/~sr/computing/basic-unix.html}  \\
+ 	\url{https://en.wikipedia.org/wiki/List_of_Unix_commands} \\
+ 	\url{https://kb.iu.edu/d/afsk} \\
+ 	\item Write a one page report on what you have learned. \\
+ 	\underline{\texttt{cp}} \\
+ 	As defined by Wikipedia, ``\texttt{cp} is a UNIX command for copying files and directories." In other words, \texttt{cp} is a command that copies a file while preserving the original file, and creates an exact copy. There are three principal modes of operation for the command, which are dependent on the type, and number of arguments that are passed through. \\
+ 	\begin{enumerate}
+ 		\item Two arguments of path names to files: the program copies the contents of the first file to the second file, creating the second file if necessary.
+ 		\item One or more arguments of path names of files and an argument of a path to a directory: the program copies each source file to the destination directory, creating any files not already existing.
+ 		\item Path names to two directories: \texttt{cp} copies all files in the source directory to the destination directory, creating any files or directories needed.
+ 	\end{enumerate} 
+	\underline{\texttt{mv}} \\ 	
+	As defined by Wikipedia, ``\texttt{mv} (short for move) is a Unix command that moves one or more files or directories from one place to another." \texttt{mv} simply moves a file and you can use this command to change the directory of a file, and to rename files. It is similar to \texttt{cp}, but it will not preserve the original file and can overwrite files.\\
+	\underline{\texttt{rm}} \\
+	As defined by Wikipedia, ``\texttt{rm} (short for remove) is a basic UNIX command used to remove objects such as files, directories, device nodes, symbolic links, and so on from the filesystem." This command will permanently delete a file. There are common options that the command accept, such as: \\
+	 \texttt{-r}, which removes directories, removing the contents recursively beforehand (so as not to leave files without a directory to reside in) (``recursive") \\
+	\texttt{-i}, which asks for every deletion to be confirmed (``interactive") \\
+	\texttt{-f}, which ignores non-existent files and overrides any confirmation prompts (``force"), although it will not remove files from a directory if the directory is write-protected.\\
+	\underline{\texttt{rmdir}} \\
+	As defined by Wikipedia, ``\texttt{rmdir} (or \texttt{rd}) is a command which will remove an empty directory (including subdirectories) on a Unix system."
+ \end{enumerate} 
+
+\textbf{Problem 3}: Search internet to find useful information and introductory articles about \texttt{sudo}. Warning: Some of the articles will suggest you to experiment with the command \texttt{sudo visudo}. In the case you choose to do so, please make sure that you know how to re-install the operating system Ubuntu 16.04 without my help.
+\begin{enumerate} [label=(\alph*)]
+	\item List 3 webpages from the internet that you found to provide the best information about \texttt{sudo}. \\
+	\url{https://en.wikipedia.org/wiki/Sudo} \\
+	\url{https://kb.iu.edu/d/amyi} \\
+	\url{https://www.linux.com/learn/linux-101-introduction-sudo} \\
+	\url{https://www.sudo.ws/sudo/history.html} \\
+	
+	\item Write a one page report on what you have learned. \\
+		\underline{\texttt{sudo}} \\
+		The history of \texttt{sudo} traces back to the 1980s at The State University of New York at Buffalo, within their computer science department by Bob Coggeshall and Cliff Spencer. Additionally, development was going on at Colorado University-Boulder by Garth Snyder. As of today, \texttt{sudo} is being maintained by Todd C. Miller. \\
+		As defined by Wikipedia, ``\texttt{sudo} is a program for Unix-like computer operating systems that allows users to run programs with the security privileges of another user, by default the superuser." The etymology of the command stands for ``superuser do." Its primary purpose is to grant access to commands which require a high privilege on a system (root privileges). On a similar note, \texttt{sudo} is related to another command, \texttt{su}. This command allows the user to switch from one account to another, as long as they have the password for the account they are switching to. What makes the \texttt{su} command special, is that it allows the user to switch into the root account as well, even without the password (given that the root password is setup). Another interesting aspect of this command is that it will allow you to switch to the root account, even if the root password is not setup, by using the \texttt{sudo} command. Essentially, the \texttt{su} and \texttt{sudo} commands have similar functionalities, but the usage will depend on if you are the root user or not. \\
+		Common uses of \texttt{sudo} include: installation of programs, granting other users \texttt{sudo} permissions, file editing, and running commands that require root privilege. In essence, the command provides a safe and powerful way to run commands on the computer.
+\end{enumerate}
+
+	
+
+\end{document}
